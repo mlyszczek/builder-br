@@ -17,7 +17,6 @@ create_hosts()
     add_host "10.1.5.2" "qx32lin"
 }
 
-sed -i -e 's/\/bin\/sh/\/bin\/zsh/' $target_dir/etc/passwd
 
 create_hosts
 
