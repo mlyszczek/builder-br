@@ -18,6 +18,8 @@ common "Automatically generated file; DO NOT EDIT" "Target options"
 common "Build options" "Toolchain"
 common "System configuration" "Kernel"
 grep -A99999 "# Target packages" .config >> configs/common.in
+grep -v "Buildroot 2017.11" configs/common.in > configs/common.in.new
+mv configs/common.in.new configs/common.in
 
 arch "Target options" "Build options"
 arch "Toolchain" "System configuration"
