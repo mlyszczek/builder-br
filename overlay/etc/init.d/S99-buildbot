@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# buildbot      starts buildbot worker
+#
+
+WORKER_PATH=/var/lib/buildbot
+USER=buildbot
+GROUP=buildbot
+
+start()
+{
+    echo -n "Starting buildbot slave... "
+    start-stop-daemon --start --make-pidfile --pidfile /var/run/buildbot.pid \
+        --background --user ${USER} --group ${GROUP} --name buildbot \
+        --exec /usr/bin/twistd -- \
+            --syslog --prefix=buildbot --no_save \
+            --python=${WORKER_PATH}/buildbot.tac
+
+    if [ $? -ne 0 ]
+    then
+        echo "[error]"
+        exit 1
+    fi
+
+    echo "[ok]"
+}
+
+stop()
+{
+    echo -n "Stopping buildbot slave... "
+    start-stop-daemon --stop --signal 15 --pidfile /var/run/buildbot.pid
+
+    if [ $? -ne 0 ]
+    then
+        echo "[error]"
+        exit 1
+    fi
+
+    echo "[ok]"
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+
+    stop)
+        stop
+        ;;
+
+    restart)
+        stop
+        start
+        ;;
+
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
