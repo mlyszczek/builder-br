@@ -7,6 +7,5 @@ ChallengeResponseAuthentication no
 UsePAM yes
 X11Forwarding no
 PrintMotd no
-PrintLastLog no
 Subsystem	sftp	/usr/lib64/misc/sftp-server
 AcceptEnv LANG LC_*

@@ -1,1 +1,0 @@
-Preamble.vba: call delete('/home/mlyszczek/.vim/autoload/Preamble.vim')|call delete('/home/mlyszczek/.vim/doc/Preamble.txt')
