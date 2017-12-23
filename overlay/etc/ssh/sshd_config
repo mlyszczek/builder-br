@@ -1,0 +1,12 @@
+PermitRootLogin no
+Match Address "10.1.5.*,10.1.1.*"
+  PermitRootLogin prohibit-password
+Match all
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+PrintLastLog no
+Subsystem	sftp	/usr/lib64/misc/sftp-server
+AcceptEnv LANG LC_*
