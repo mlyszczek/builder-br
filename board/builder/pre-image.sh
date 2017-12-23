@@ -22,6 +22,7 @@ create_hosts()
 {
     hostname=`head -c -1 -q ${target_dir}/etc/hostname`
     echo "127.0.0.1  ${hostname}.kurwinet.pl ${hostname} localhost" > ${target_dir}/etc/hosts
+    add_host "10.1.1.1" "kurwik"
     add_host "10.1.5.2" "qx32lin"
 }
 
