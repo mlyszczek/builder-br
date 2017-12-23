@@ -2,6 +2,14 @@
 
 target_dir=$1
 
+set_hostname()
+{
+    arch=`grep BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE ${BR2_CONFIG}  | cut -f2 -d.`
+    hostname="q${arch}lin"
+    echo $hostname
+    echo $hostname > ${target_dir}/etc/hostname
+}
+
 add_host()
 {
     ip=$1
@@ -17,7 +25,7 @@ create_hosts()
     add_host "10.1.5.2" "qx32lin"
 }
 
-
+set_hostname
 create_hosts
 
 exit 0
