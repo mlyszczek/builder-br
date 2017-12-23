@@ -1,6 +1,6 @@
 #!/bin/sh
 
-gcc_target=`grep BR2_GCC_TARGET_ARCH .config | cut -f2 -d\"`
+arch=`grep "BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE" .config | cut -f2 -d.`
 toolchain_dir=/home/mlyszczek/x-tools
 
-cp -r ${toolchain_dir}/HOST-${gcc_target}-builder-linux-gnu/* output/target/usr/native-compiler
+cp -r ${toolchain_dir}/HOST-${arch}-builder-linux-gnu/* output/target/usr/native-compiler

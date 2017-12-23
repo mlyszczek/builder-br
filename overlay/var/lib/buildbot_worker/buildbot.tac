@@ -29,7 +29,7 @@ maxRotatedFiles = 10
 port = 9989
 
 # worker settings
-worker_name = 'qx32lin'
+worker_name = 'bbs-i686-linux'
 passwd = 'buildbot'
 buildmaster_host = 'kurwik'
 keepalive = 600
