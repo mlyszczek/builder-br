@@ -17,7 +17,7 @@ echo > configs/config.${a}.in
 common "Automatically generated file; DO NOT EDIT" "Target options"
 common "Build options" "Toolchain"
 common "System configuration" "Kernel"
-common "Target packages" "Legacy options removed in"
+grep -A99999 "# Target packages" .config >> configs/common.in
 
 arch "Target options" "Build options"
 arch "Toolchain" "System configuration"
