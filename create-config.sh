@@ -14,3 +14,4 @@ then
 fi
 
 cat configs/config.$1.in configs/common.in > .config
+make oldconfig
