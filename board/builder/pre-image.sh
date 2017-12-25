@@ -2,9 +2,11 @@
 
 target_dir=$1
 
+arch=`grep BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE ${BR2_CONFIG}  | cut -f2 -d.`
+
+
 set_hostname()
 {
-    arch=`grep BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE ${BR2_CONFIG}  | cut -f2 -d.`
     hostname="bbs-${arch}-linux"
     echo $hostname
     echo $hostname > ${target_dir}/etc/hostname
@@ -18,7 +20,13 @@ create_hosts()
     echo "10.1.1.1   kurwinet.pl" >> ${target_dir}/etc/hosts
 }
 
+update_opkg_with_arch()
+{
+    echo "arch ${arch} 200" >> ${target_dir}/etc/opkg/opkg.conf
+}
+
 set_hostname
 create_hosts
+update_opkg_with_arch
 
 exit 0

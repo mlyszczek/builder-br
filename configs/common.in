@@ -1262,7 +1262,10 @@ BR2_PACKAGE_WEBRTC_AUDIO_PROCESSING_ARCH_SUPPORTS=y
 #
 # Compression and decompression
 #
-# BR2_PACKAGE_LIBARCHIVE is not set
+BR2_PACKAGE_LIBARCHIVE=y
+# BR2_PACKAGE_LIBARCHIVE_BSDTAR is not set
+# BR2_PACKAGE_LIBARCHIVE_BSDCPIO is not set
+# BR2_PACKAGE_LIBARCHIVE_BSDCAT is not set
 
 #
 # libsquish needs a toolchain w/ C++, dynamic library
@@ -1866,7 +1869,9 @@ BR2_PACKAGE_CANFESTIVAL_ARCH_SUPPORTS=y
 # libcgicc needs a toolchain w/ C++
 #
 # BR2_PACKAGE_LIBCOAP is not set
-# BR2_PACKAGE_LIBCURL is not set
+BR2_PACKAGE_LIBCURL=y
+BR2_PACKAGE_CURL=y
+# BR2_PACKAGE_LIBCURL_VERBOSE is not set
 # BR2_PACKAGE_LIBDNET is not set
 # BR2_PACKAGE_LIBEXOSIP2 is not set
 # BR2_PACKAGE_LIBFCGI is not set
@@ -2587,7 +2592,7 @@ BR2_PACKAGE_OPENSSH=y
 # BR2_PACKAGE_VSFTPD is not set
 # BR2_PACKAGE_VTUN is not set
 # BR2_PACKAGE_WAVEMON is not set
-# BR2_PACKAGE_WGET is not set
+BR2_PACKAGE_WGET=y
 # BR2_PACKAGE_WHOIS is not set
 # BR2_PACKAGE_WIREGUARD is not set
 # BR2_PACKAGE_WIRELESS_REGDB is not set
@@ -2650,7 +2655,8 @@ BR2_PACKAGE_OPENSSH=y
 #
 # -------------------------------------------------------
 #
-# BR2_PACKAGE_OPKG is not set
+BR2_PACKAGE_OPKG=y
+# BR2_PACKAGE_OPKG_GPG_SIGN is not set
 # BR2_PACKAGE_RPM is not set
 
 #
