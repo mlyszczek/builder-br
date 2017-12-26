@@ -29,7 +29,7 @@ maxRotatedFiles = 10
 port = 9989
 
 # worker settings
-worker_name = 'bbs-${TARGET}'
+worker_name = '${HOSTNAME}'
 passwd = 'buildbot'
 buildmaster_host = 'kurwik'
 keepalive = 600
