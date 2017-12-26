@@ -1,17 +1,43 @@
 #!/bin/sh
 
+configs=()
+n=0
+cd configs
+
+###
+# add all configs to array
+#
+
+for c in *
+do
+    if [ "${c}" = "packages.in" ]
+    then
+        continue
+    fi
+
+    configs+=($c)
+done
+
+###
+# if config is not passed, print usage and list available configs
+#
+
 if [ $# -ne 1 ]
 then
+    echo "usage: ${0} <config_number>"
+    echo""
     echo "Supported configs are:"
 
-    for f in configs/config.*
+    for c in "${configs[@]}"
     do
-        arch=`echo $f | cut -f2 -d.`
-        echo -e "\t$arch"
+        echo -e "\t$n) `echo $c | cut -f1 -d.`"
+        ((n++))
     done
 
-    exit 2
+    exit $n
 fi
 
-cat configs/config.$1.in configs/common.in > .config
-make oldconfig
+cat ${configs[${1}]} packages.in > temp_defconfig
+cd ..
+make temp_defconfig
+rm configs/temp_defconfig
