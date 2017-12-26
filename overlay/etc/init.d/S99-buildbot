@@ -6,7 +6,8 @@
 WORKER_PATH=/var/lib/buildbot
 USER=buildbot
 GROUP=buildbot
-PATH="${PATH}:/usr/native-toolchain/bin"
+export PATH="${PATH}:/usr/native-toolchain/bin"
+export LD_LIBRARY_PATH="/usr/native-toolchain/${TARGET}/lib"
 
 start()
 {
