@@ -9,9 +9,8 @@ target=`echo ${hostname} | cut -f2- -d-`
 
 echo "127.0.0.1  ${hostname}.kurwinet.pl ${hostname} localhost" > ${target_dir}/etc/hosts
 echo "arch ${arch} 200" >> ${target_dir}/etc/opkg/opkg.conf
-sed -i "s/\${HOSTNAME}/${hostname}/g" ${target_dir}/var/lib/buildbot/buildbot.tac
-sed -i "s/\${TARGET}/${target}/g" ${target_dir}/etc/init.d/S99-buildbot
-echo native-${target} >> ${target_dir}/etc/packages
+echo "native-${target}" >> ${target_dir}/etc/packages
+echo "buildbot-slaves-${target}" >> ${target_dir}/etc/packages
 
 
 exit 0
