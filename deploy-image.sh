@@ -5,7 +5,7 @@ kernel_path=/boot/qemu
 kernel_version=`grep BR2_LINUX_KERNEL_VERSION .config | cut -f2 -d\"`
 rootfs_path=/var/diskless/images/bbs-${target}
 rootfs_server=root@kurwik
-zimage=`ls -1 output/images | grep zImage`
+zimage=`ls -1 output/images | grep -i image`
 dtb=`ls -1 output/images | grep .dtb`
 
 echo "This is very-local script check paths before you continue! Will execute:"
