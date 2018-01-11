@@ -10,6 +10,12 @@ start()
     ip1=`echo ${mac} | cut -f5 -d:`
     ip0=`echo ${mac} | cut -f6 -d:`
 
+    # remove leading '0' (if any)
+    ip3=$((10#${ip3}))
+    ip2=$((10#${ip2}))
+    ip1=$((10#${ip1}))
+    ip0=$((10#${ip0}))
+
     ip="${ip3}.${ip2}.${ip1}.${ip0}"
     bip="${ip3}.${ip2}.${ip1}.255"
     rip="${ip3}.${ip2}.${ip1}.1"
