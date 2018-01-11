@@ -12,8 +12,13 @@ OPENSSH_LICENSE_FILES = LICENCE
 # 0001-configure-ac-detect-mips-abi.patch
 # 0002-configure-ac-properly-set-seccomp-audit-arch-for-mips64.patch
 OPENSSH_AUTORECONF = YES
-#OPENSSH_CONF_ENV = LD="$(TARGET_CC)" LDFLAGS="$(TARGET_CFLAGS) -lssp_nonshared"
+
 OPENSSH_CONF_ENV = LD="$(TARGET_CC)" LDFLAGS="$(TARGET_CFLAGS)"
+
+ifeq ($(BR2_TARGET_GENERIC_HOSTNAME),"bbs-i686-builder-linux-musl")
+	OPENSSH_CONF_ENV += LDFLAGS="$(TARGET_CFLAGS) -lssp_nonshared"
+endif
+
 OPENSSH_CONF_OPTS = \
 	--sysconfdir=/etc/ssh \
 	--disable-lastlog \
