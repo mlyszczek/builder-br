@@ -1,0 +1,7 @@
+config BR2_PACKAGE_LIBRB
+	bool "librb"
+	help
+		librb is thread-safe, fast and easy to use ring buffer
+		with interface similar to read/write from POSIX
+
+		http://librb.kurwinet.pl

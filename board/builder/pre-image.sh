@@ -6,6 +6,9 @@ hostname=`grep BR2_TARGET_GENERIC_HOSTNAME=\" ${BR2_CONFIG} | cut -f2 -d\"`
 arch=`echo ${hostname} | cut -f2 -d-`
 target=`echo ${hostname} | cut -f2- -d-`
 
+# install includes as thei are build dependencies for packages
+mkdir "${target_dir}/usr/include"
+cp "${STAGING_DIR}/usr/include/rb.h" "${target_dir}/usr/include"
 
 echo "127.0.0.1  ${hostname}.kurwinet.pl ${hostname} localhost" > ${target_dir}/etc/hosts
 echo "arch ${arch} 200" >> ${target_dir}/etc/opkg/opkg.conf
