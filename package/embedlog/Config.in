@@ -1,0 +1,6 @@
+config BR2_PACKAGE_EMBEDLOG
+	bool "embedlog"
+	help
+		Logger written in C89 targeting embedded systems.
+
+		http://embedlog.kurwinet.pl
