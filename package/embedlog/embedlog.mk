@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-EMBEDLOG_VERSION = 0.2.0
+EMBEDLOG_VERSION = 0.2.1
 EMBEDLOG_SOURCE = embedlog-$(EMBEDLOG_VERSION).tar.gz
 EMBEDLOG_SITE = http://distfiles.kurwinet.pl/embedlog
 EMBEDLOG_INSTALL_STAGING = YES
