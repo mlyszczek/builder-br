@@ -14,7 +14,10 @@ make it.
 
 ~~~
 $ ./create-config.sh
-usage: ./create-config.sh <config_number>
+usage: ./create-config.sh <config_number> <host>
+
+host is friendly pc name where images will be hosted in qemu.
+hostname of generated images will be {arch}-{host}-{linux}-{libc}
 
 Supported configs are:
         0) aarch64-builder-linux-gnu
@@ -30,7 +33,7 @@ Supported configs are:
         10) x86_64-builder-linux-gnu
         11) x86_64-builder-linux-musl
         12) x86_64-builder-linux-uclibc
-$ ./create-config.sh 1
+$ ./create-config.sh 1 kurwik
 #
 # configuration written to /home/mlyszczek/projekty/bofc/builder-br/.config
 #
