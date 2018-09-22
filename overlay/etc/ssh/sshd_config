@@ -1,7 +1,4 @@
-PermitRootLogin no
-Match Address "10.1.5.*,10.1.1.*"
-  PermitRootLogin prohibit-password
-Match all
+PermitRootLogin prohibit-password
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 UsePAM yes
