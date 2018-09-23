@@ -15,7 +15,7 @@ OPENSSH_AUTORECONF = YES
 
 OPENSSH_CONF_ENV = LD="$(TARGET_CC)" LDFLAGS="$(TARGET_CFLAGS)"
 
-ifeq ($(BR2_TARGET_GENERIC_HOSTNAME),"bbs-i686-builder-linux-musl")
+ifeq ($(BR2_TOOLCHAIN_EXTERNAL_PREFIX),"i686-builder-linux-musl")
 	OPENSSH_CONF_ENV += LDFLAGS="$(TARGET_CFLAGS) -lssp_nonshared"
 endif
 
