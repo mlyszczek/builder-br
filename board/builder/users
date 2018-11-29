@@ -1,1 +1,1 @@
-buildbot       -1 buildbot     -1 * - - buildbot     user to build and test programs
+buildbot       -1 buildbot     -1 * - /bin/bash buildbot     user to build and test programs

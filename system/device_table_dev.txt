@@ -39,6 +39,8 @@
 #/dev/ttymxc	c	666	0	0	207	16	0	1	4
 #/dev/hvc	c	640	0	0	229	0	0	1	4
 
+/dev/mqueue		d	755	0	0	-	-	-	-	-
+
 # Input stuff
 #/dev/input		d	755	0	0	-	-	-	-	-
 #/dev/input/mice		c	640	0	0	13	63	0	0	-

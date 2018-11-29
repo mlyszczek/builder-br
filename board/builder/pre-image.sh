@@ -19,6 +19,13 @@ echo "127.0.0.1  ${hostname}.kurwinet.pl ${hostname} localhost" > ${target_dir}/
 echo "arch ${arch} 200" >> ${target_dir}/etc/opkg/opkg.conf
 
 ###
+# create muque mount point
+#
+
+echo "none            /dev/mqueue     mqueue  defaults        0       0" >> \
+    ${target_dir}/etc/fstab
+
+###
 # change _ to - in for example x86_64 as opkg doesn't support _ in names
 #
 target=`echo ${target} | sed 's/_/-/'`
